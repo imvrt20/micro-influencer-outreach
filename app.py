@@ -231,6 +231,12 @@ else:
 
 # --------------------------------------------------
 # EXPORT QUALIFIED INFLUENCERS
+st.download_button(
+    label="📥 Download Qualified Influencers",
+    data=filtered.to_csv(index=False).encode("utf-8"),
+    file_name="qualified_influencers.csv",
+    mime="text/csv"
+)
 # --------------------------------------------------
 
 if len(filtered) > 0:

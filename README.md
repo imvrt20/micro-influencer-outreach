@@ -1,84 +1,83 @@
 # 🤝 AI-Powered Micro-Influencer Outreach System
 
-An AI-powered automation system that helps identify, filter, score,
-enrich and generate personalized collaboration messages for
-micro-influencers.
+An AI-powered system for discovering, filtering, scoring, enriching, and generating personalized outreach messages for micro-influencers.
 
 ## 🚀 Project Overview
 
-Influencer marketing teams often spend significant time manually
-finding suitable influencers and writing personalized outreach
-messages.
+This project automates the initial stages of influencer marketing outreach.
 
-This project automates the workflow using Python, Pandas, Streamlit
-and a locally running Gemma AI model through Ollama.
+The system:
+
+1. 📊 Loads influencer data
+2. 🔎 Filters influencers based on predefined criteria
+3. ⭐ Scores influencers based on engagement and audience size
+4. 🧠 Enriches influencer profiles with additional categories
+5. 🤖 Generates personalized collaboration messages using a local AI model
+6. 🖥️ Provides an interactive Streamlit dashboard
 
 ## ✨ Features
 
-- 🔎 Influencer discovery from structured dataset
-- 🎯 Micro-influencer filtering
-- 📊 Influencer scoring
-- 🏷️ Audience and engagement classification
-- ⭐ Priority classification
-- 🤖 AI-powered personalized outreach
-- 🚀 Bulk outreach message generation
-- 📧 Email information included in campaigns
-- 📥 CSV export
-- 📈 Campaign statistics
-- 🖥️ Interactive Streamlit dashboard
-- 🔒 Local AI inference using Ollama
+- Influencer discovery from CSV data
+- Follower and engagement filtering
+- Influencer scoring system
+- Audience classification
+- Engagement classification
+- Priority classification
+- Collaboration type recommendation
+- AI-generated personalized outreach
+- Interactive Streamlit dashboard
 
 ## 🛠️ Tech Stack
 
-| Technology | Purpose |
-|------------|---------|
-| Python | Core development |
-| Pandas | Data processing |
-| Streamlit | Web dashboard |
-| Ollama | Local AI inference |
-| Gemma | AI message generation |
-| CSV | Influencer data storage |
+- **Python**
+- **Pandas**
+- **Streamlit**
+- **Ollama**
+- **Gemma AI**
+- **BeautifulSoup**
+- **Requests**
+- **python-dotenv**
+- **Git & GitHub**
 
-## 🏗️ System Architecture
+## 🧠 AI Personalization
+
+The project uses a locally running **Gemma model through Ollama** to generate personalized collaboration messages.
+
+The AI considers:
+
+- Influencer name
+- Platform
+- Niche
+- Followers
+- Engagement rate
+- Recommended collaboration type
+
+Example:
+
+> Hi Rahul, we love your fitness content and your engaged YouTube audience. We'd love to explore a product collaboration with you. Let us know if you'd be interested in discussing the opportunity!
+
+## 📊 Influencer Qualification
+
+The default filtering criteria are:
+
+| Criteria | Requirement |
+|---|---|
+| Followers | 5,000 – 100,000 |
+| Engagement Rate | ≥ 4% |
+| Priority | Based on calculated score |
+
+## 🏗️ Project Structure
 
 ```text
-                 Influencer Dataset
-                         │
-                         ▼
-                ┌─────────────────┐
-                │    Discovery    │
-                └────────┬────────┘
-                         │
-                         ▼
-                ┌─────────────────┐
-                │    Filtering    │
-                │ Followers +     │
-                │ Engagement      │
-                └────────┬────────┘
-                         │
-                         ▼
-                ┌─────────────────┐
-                │     Scoring     │
-                └────────┬────────┘
-                         │
-                         ▼
-                ┌─────────────────┐
-                │   Enrichment    │
-                └────────┬────────┘
-                         │
-                         ▼
-                ┌─────────────────┐
-                │ Streamlit UI    │
-                └────────┬────────┘
-                         │
-                         ▼
-                ┌─────────────────┐
-                │ Ollama + Gemma  │
-                │ AI Personalize  │
-                └────────┬────────┘
-                         │
-                         ▼
-                Personalized Outreach
-                         │
-                         ▼
-                    CSV Export
+micro-influencer-outreach/
+│
+├── app.py
+├── discovery.py
+├── filtering.py
+├── scoring.py
+├── enrichment.py
+├── personalization.py
+├── influencers.csv
+├── requirements.txt
+├── README.md
+└── .gitignore
